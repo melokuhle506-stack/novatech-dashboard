@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>NovaTech Service Desk Dashboard</title>
+<style>
+:root{--navy:#12345a;--blue:#1677c8;--bg:#f4f7fb;--ink:#1d2a3a;--muted:#66758a;--line:#dce5ef}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);font:15px Arial,sans-serif;color:var(--ink)}
+header{background:linear-gradient(110deg,#12345a,#1769a8);color:white;padding:26px 4%}
+.brand{display:flex;gap:13px;align-items:center}.logo{width:44px;height:44px;border-radius:12px;background:white;color:var(--blue);display:grid;place-items:center;font-size:21px;font-weight:bold}
+h1{font-size:clamp(22px,3vw,30px);margin:0 0 7px}.sub{margin:0;color:#dceeff}.meta{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-top:20px;color:#e1efff;font-size:13px}
+main{max-width:1200px;margin:25px auto;padding:0 18px}.heading{font-size:18px;color:var(--navy);margin:25px 0 13px}
+.cards{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}.card{background:white;border:1px solid var(--line);border-radius:14px;padding:19px;box-shadow:0 3px 12px #18395b0a}
+.label{font-size:13px;color:var(--muted);margin-bottom:12px}.number{font-size:32px;font-weight:bold}.note{font-size:12px;color:var(--muted);margin-top:8px}
+.charts{display:grid;grid-template-columns:1fr 1fr;gap:16px}.card h3{font-size:16px;margin:0 0 7px}.small{font-size:12px;color:var(--muted);margin-bottom:22px}
+.barrow{display:grid;grid-template-columns:75px 1fr 20px;gap:10px;align-items:center;margin:20px 0;font-size:13px}.track{height:13px;background:#edf2f8;border-radius:10px;overflow:hidden}.bar{height:100%;border-radius:10px}.low{background:#2c8bd6}.med{background:#e5a12b}.high{background:#d83a45}
+.donutrow{display:flex;align-items:center;justify-content:center;gap:25px;flex-wrap:wrap;min-height:170px}.donut{width:145px;height:145px;border-radius:50%;background:conic-gradient(#1677c8 0 37.5%,#e5a12b 37.5% 62.5%,#27966b 62.5% 100%);position:relative}.donut:after{content:"8\A Tickets";white-space:pre;position:absolute;inset:23px;border-radius:50%;background:white;display:grid;place-content:center;text-align:center;font-size:21px;line-height:1.35;font-weight:bold;color:var(--navy)}
+.legend{display:grid;gap:13px;font-size:13px}.dot{display:inline-block;width:10px;height:10px;border-radius:3px;margin-right:8px}
+.tablebox{padding:0;overflow:hidden}.tablehead{padding:18px;display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap}.tablewrap{overflow-x:auto}table{width:100%;border-collapse:collapse;min-width:650px;font-size:13px}th,td{text-align:left;padding:13px 16px;border-top:1px solid var(--line)}th{background:#f8fafc;color:var(--muted);font-size:11px;text-transform:uppercase;letter-spacing:.4px}
+.tag{display:inline-block;border-radius:20px;padding:5px 9px;font-size:11px;font-weight:bold}.p-high{background:#fdebed;color:#b52b36}.p-med{background:#fff4d9;color:#956300}.p-low{background:#e4f2ff;color:#1769a8}.open{background:#e4f2ff;color:#1769a8}.progress{background:#fff4d9;color:#956300}.resolved{background:#e2f6ed;color:#18734f}
+footer{text-align:center;padding:22px;color:var(--muted);font-size:12px}
+@media(max-width:800px){.cards{grid-template-columns:repeat(2,1fr)}.charts{grid-template-columns:1fr}}@media(max-width:430px){.cards{grid-template-columns:1fr}.number{font-size:28px}}
+</style></head><body>
+<header><div class="brand"><div class="logo">N</div><div><h1>NovaTech Service Desk Dashboard</h1><p class="sub">Ticket Monitoring &amp; Resolution</p></div></div>
+<div class="meta"><span>Internal IT Support • Network &amp; Service Operations</span><span>Sample assignment data • 25 Oct 2026</span></div></header>
+<main><h2 class="heading">Service Desk Overview</h2><section class="cards">
+<div class="card"><div class="label">Total Tickets</div><div class="number">8</div><div class="note">All logged incidents</div></div>
+<div class="card"><div class="label">High Priority Tickets</div><div class="number">3</div><div class="note">Require urgent attention</div></div>
+<div class="card"><div class="label">Open Tickets</div><div class="number">3</div><div class="note">Awaiting action</div></div>
+<div class="card"><div class="label">Resolved Tickets</div><div class="number">3</div><div class="note">Marked as resolved</div></div></section>
+<h2 class="heading">Ticket Analytics</h2><section class="charts">
+<div class="card"><h3>Tickets by Priority</h3><div class="small">Number of tickets in each priority level</div>
+<div class="barrow"><span>Low</span><div class="track"><div class="bar low" style="width:100%"></div></div><b>4</b></div>
+<div class="barrow"><span>Medium</span><div class="track"><div class="bar med" style="width:25%"></div></div><b>1</b></div>
+<div class="barrow"><span>High</span><div class="track"><div class="bar high" style="width:75%"></div></div><b>3</b></div></div>
+<div class="card"><h3>Tickets by Current Status</h3><div class="small">Current distribution across the workflow</div><div class="donutrow"><div class="donut" aria-label="3 open, 2 in progress, 3 resolved"></div><div class="legend"><div><i class="dot" style="background:#1677c8"></i>Open <b>3</b></div><div><i class="dot" style="background:#e5a12b"></i>In Progress <b>2</b></div><div><i class="dot" style="background:#27966b"></i>Resolved <b>3</b></div></div></div></div></section>
+<h2 class="heading">Recent Tickets</h2><section class="card tablebox"><div class="tablehead"><h3>Ticket Register</h3><span>8 sample records</span></div><div class="tablewrap"><table><thead><tr><th>Incident ID</th><th>Category</th><th>Priority</th><th>Description</th><th>Assigned Technician</th><th>Status</th></tr></thead><tbody>
+<tr><td>NT-0001</td><td>Network</td><td><span class="tag p-high">High</span></td><td>Office network unavailable</td><td>Network Support</td><td><span class="tag open">Open</span></td></tr>
+<tr><td>NT-0002</td><td>Hardware</td><td><span class="tag p-med">Medium</span></td><td>Printer not responding</td><td>Help Desk</td><td><span class="tag progress">In Progress</span></td></tr>
+<tr><td>NT-0003</td><td>Access</td><td><span class="tag p-low">Low</span></td><td>Password reset request</td><td>Help Desk</td><td><span class="tag resolved">Resolved</span></td></tr>
+<tr><td>NT-0004</td><td>Network</td><td><span class="tag p-high">High</span></td><td>Wi-Fi connection failure</td><td>Network Support</td><td><span class="tag progress">In Progress</span></td></tr>
+<tr><td>NT-0005</td><td>Software</td><td><span class="tag p-low">Low</span></td><td>Application installation</td><td>Help Desk</td><td><span class="tag resolved">Resolved</span></td></tr>
+<tr><td>NT-0006</td><td>Hardware</td><td><span class="tag p-high">High</span></td><td>Workstation will not start</td><td>Network Support</td><td><span class="tag open">Open</span></td></tr>
+<tr><td>NT-0007</td><td>Access</td><td><span class="tag p-low">Low</span></td><td>New user access request</td><td>Help Desk</td><td><span class="tag open">Open</span></td></tr>
+<tr><td>NT-0008</td><td>Software</td><td><span class="tag p-low">Low</span></td><td>Email client configuration</td><td>Help Desk</td><td><span class="tag resolved">Resolved</span></td></tr>
+</tbody></table></div></section>
+<footer>NovaTech Service Operations • Demonstration dashboard using simulated ticket data. Figures must be updated manually when the sample register changes.</footer></main></body></html>
